@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2012 Bogdan Pistol
+    All rights reserved.
+
+    Permission is hereby granted, free  of charge, to any person obtaining
+    a  copy  of this  software  and  associated  documentation files  (the
+    "Software"), to  deal in  the Software without  restriction, including
+    without limitation  the rights to  use, copy, modify,  merge, publish,
+    distribute,  sublicense, and/or sell  copies of  the Software,  and to
+    permit persons to whom the Software  is furnished to do so, subject to
+    the following conditions:
+    The  above  copyright  notice  and  this permission  notice  shall  be
+    included in all copies or substantial portions of the Software.
+    THE  SOFTWARE IS  PROVIDED  "AS  IS", WITHOUT  WARRANTY  OF ANY  KIND,
+    EXPRESS OR  IMPLIED, INCLUDING  BUT NOT LIMITED  TO THE  WARRANTIES OF
+    MERCHANTABILITY,    FITNESS    FOR    A   PARTICULAR    PURPOSE    AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE,  ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>gg.pistol</groupId>
+    <artifactId>lumberjack</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Lumberjack</name>
+    <url>https://github.com/bogdanu/lumberjack</url>
+    <description>
+        This is an extension to the Simple Logging Facade for Java (SLF4J) library that enhances it by adding
+        support for Java Varargs logging methods. This library requires Java version 1.5 or later.
+    </description>
+
+    <packaging>jar</packaging>
+
+    <licenses>
+        <license>
+            <name>MIT license</name>
+        </license>
+    </licenses>
+    <inceptionYear>2012</inceptionYear>
+
+    <scm>
+        <url>https://github.com/bogdanu/lumberjack</url>
+        <connection>scm:git:git://github.com/bogdanu/lumberjack.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/bogdanu/lumberjack.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>bogdan</id>
+            <name>Bogdan Pistol</name>
+            <email>bogdan@pistol.gg</email>
+            <url>http://www.linkedin.com/in/bogdanpistol</url>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-tools</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>[1.5.0,)</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <debug>true</debug>
+                    <optimize>false</optimize>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12</version>
+                <configuration>
+                    <forkMode>once</forkMode>
+                    <runOrder>random</runOrder>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <check>
+                        <branchRate>95</branchRate>
+                        <packageBranchRate>95</packageBranchRate>
+                        <totalBranchRate>95</totalBranchRate>
+
+                        <packageLineRate>95</packageLineRate>
+                        <totalLineRate>95</totalLineRate>
+
+                        <haltOnFailure>true</haltOnFailure>
+                    </check>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>animal-sniffer-maven-plugin</artifactId>
+                <version>1.7</version>
+                <configuration>
+                    <signature>
+                        <groupId>org.codehaus.mojo.signature</groupId>
+                        <artifactId>java15</artifactId>
+                        <version>1.0</version>
+                    </signature>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <sourcepath>${project.basedir}/src/main/java</sourcepath>
+                    <links>
+                        <link>http://docs.oracle.com/javase/1.5.0/docs/api/</link>
+                        <link>http://www.slf4j.org/api/</link>
+                    </links>
+                    <locale>en_US</locale>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>default</id>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
+        
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.5.1</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.7.1</version>
+                <configuration>
+                    <includeTests>true</includeTests>
+                    <linkXref>true</linkXref>
+                    <targetJdk>1.5</targetJdk>
+                    <rulesets>
+                        <ruleset>${project.basedir}/src/test/resources/pmd-ruleset.xml</ruleset>
+                    </rulesets>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.4.0</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <includeTests>true</includeTests>
+                    <excludeFilterFile>${project.basedir}/src/test/resources/findbugs-exclude.xml</excludeFilterFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>

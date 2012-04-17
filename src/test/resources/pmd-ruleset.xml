@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2012 Bogdan Pistol
+    All rights reserved.
+
+    Permission is hereby granted, free  of charge, to any person obtaining
+    a  copy  of this  software  and  associated  documentation files  (the
+    "Software"), to  deal in  the Software without  restriction, including
+    without limitation  the rights to  use, copy, modify,  merge, publish,
+    distribute,  sublicense, and/or sell  copies of  the Software,  and to
+    permit persons to whom the Software  is furnished to do so, subject to
+    the following conditions:
+    The  above  copyright  notice  and  this permission  notice  shall  be
+    included in all copies or substantial portions of the Software.
+    THE  SOFTWARE IS  PROVIDED  "AS  IS", WITHOUT  WARRANTY  OF ANY  KIND,
+    EXPRESS OR  IMPLIED, INCLUDING  BUT NOT LIMITED  TO THE  WARRANTIES OF
+    MERCHANTABILITY,    FITNESS    FOR    A   PARTICULAR    PURPOSE    AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE,  ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<ruleset name="Custom PMD ruleset" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
+    xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>
+        Custom PMD ruleset for Java
+    </description>
+
+    <rule ref="rulesets/basic.xml">
+        <exclude name="AvoidUsingOctalValues" />
+        <exclude name="EmptyCatchBlock" />
+        <exclude name="EmptySynchronizedBlock" />
+        <exclude name="AvoidThreadGroup" />
+    </rule>
+    
+    <rule ref="rulesets/braces.xml"></rule>
+    
+    <rule ref="rulesets/clone.xml">
+        <exclude name="CloneThrowsCloneNotSupportedException" />
+    </rule>
+    
+    <rule ref="rulesets/codesize.xml">
+        <exclude name="ExcessiveClassLength" />
+        <exclude name="ExcessivePublicCount" />
+        <exclude name="TooManyFields" />
+        <exclude name="NcssMethodCount" />
+        <exclude name="NcssTypeCount" />
+        <exclude name="NcssConstructorCount" />
+        <exclude name="TooManyMethods" />
+    </rule>
+    <rule ref="rulesets/codesize.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="51" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/codesize.xml/ExcessiveParameterList">
+        <properties>
+            <property name="minimum" value="6" />
+        </properties>
+    </rule>
+    
+    <rule ref="rulesets/controversial.xml">
+        <exclude name="OnlyOneReturn" />
+        <exclude name="AssignmentInOperand" />
+        <exclude name="AtLeastOneConstructor" />
+        <exclude name="DefaultPackage" />
+        <exclude name="BooleanInversion" />
+        <exclude name="DataflowAnomalyAnalysis" />
+        <exclude name="AvoidUsingVolatile" />
+        <exclude name="AvoidUsingNativeCode" />
+        <exclude name="AvoidLiteralsInIfCondition" />
+        <exclude name="UseConcurrentHashMap" />
+        <exclude name="NullAssignment" />
+        <exclude name="CallSuperInConstructor" />
+        <exclude name="AvoidFinalLocalVariable" />
+    </rule>
+    
+    <rule ref="rulesets/coupling.xml">
+        <exclude name="CouplingBetweenObjects" />
+        <exclude name="ExcessiveImports" />
+    </rule>
+    
+    <rule ref="rulesets/design.xml">
+        <exclude name="UseSingleton" />
+        <exclude name="SwitchStmtsShouldHaveDefault" />
+        <exclude name="AvoidReassigningParameters" />
+        <exclude name="NonStaticInitializer" />
+        <exclude name="ConfusingTernary" />
+        <exclude name="AssignmentToNonFinalStatic" />
+        <exclude name="UseNotifyAllInsteadOfNotify" />
+        <exclude name="UncommentedEmptyMethod" />
+        <exclude name="UncommentedEmptyConstructor" />
+        <exclude name="UnsynchronizedStaticDateFormatter" />
+        <exclude name="PreserveStackTrace" />
+        <exclude name="EmptyMethodInAbstractClassShouldBeAbstract" />
+        <exclude name="AccessorClassGeneration" />
+        <exclude name="TooFewBranchesForASwitchStatement" />
+        <exclude name="ConstructorCallsOverridableMethod" />
+        <exclude name="MissingBreakInSwitch" />
+        <exclude name="EqualsNull" />
+        <exclude name="PositionLiteralsFirstInComparisons" />
+        <exclude name="UnnecessaryLocalBeforeReturn" />
+    </rule>
+    <rule ref="rulesets/design.xml/SwitchDensity">
+        <properties>
+            <property name="minimum" value="6" />
+        </properties>
+    </rule>
+    
+    <rule ref="rulesets/finalizers.xml"></rule>
+    
+    <rule ref="rulesets/imports.xml">
+        <exclude name="TooManyStaticImports" />
+    </rule>
+    
+    <rule ref="rulesets/junit.xml">
+        <exclude name="JUnitAssertionsShouldIncludeMessage" />
+        <exclude name="JUnitTestsShouldIncludeAssert" />
+        <exclude name="TestClassWithoutTestCases" />
+        <exclude name="JUnitSpelling" />
+    </rule>
+    
+    <rule ref="rulesets/migrating.xml"></rule>
+    
+    <rule ref="rulesets/naming.xml">
+        <exclude name="ShortVariable" />
+        <exclude name="LongVariable" />
+        <exclude name="ShortMethodName" />
+        <exclude name="MisleadingVariableName" />
+        <exclude name="AvoidFieldNameMatchingMethodName" />
+        <exclude name="AbstractNaming" />
+    </rule>
+    
+    <rule ref="rulesets/strictexception.xml">
+        <exclude name="AvoidThrowingNullPointerException" />
+        <exclude name="AvoidCatchingGenericException" />
+        <exclude name="SignatureDeclareThrowsException" />
+        <exclude name="AvoidRethrowingException" />
+    </rule>
+    
+    <rule ref="rulesets/strings.xml">
+        <exclude name="AvoidDuplicateLiterals" />
+        <exclude name="InefficientEmptyStringCheck" />
+        <exclude name="InsufficientStringBufferDeclaration" />
+        <exclude name="AvoidStringBufferField" />
+    </rule>
+    
+    <rule ref="rulesets/typeresolution.xml">
+        <exclude name="UnusedImports" />
+        <exclude name="SignatureDeclareThrowsException" />
+    </rule>
+    
+    <rule ref="rulesets/unusedcode.xml"></rule>
+</ruleset>
