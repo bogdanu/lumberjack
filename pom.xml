@@ -39,6 +39,7 @@
     <licenses>
         <license>
             <name>MIT license</name>
+            <url>https://raw.github.com/bogdanu/lumberjack/master/LICENSE.txt</url>
         </license>
     </licenses>
     <inceptionYear>2012</inceptionYear>
