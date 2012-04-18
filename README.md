@@ -8,7 +8,7 @@ it defines varargs log methods. The JackLogger objects are created with the Jack
 
 ## Example usage
 
-```
+```java
 JackLogger logger = JackLoggerFactory.getLogger(LoggerFactory.getLogger(Weather.class));
 
 logger.info("Hello {}! The current time is {}:{}:{}, and after {} hours the weather will be {}.", "Jack", 13, 30, 0, 5, "sunny");
