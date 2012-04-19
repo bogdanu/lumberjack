@@ -268,7 +268,6 @@
                 <version>${version.maven.pmd.plugin}</version>
                 <configuration>
                     <includeTests>true</includeTests>
-                    <linkXref>true</linkXref>
                     <targetJdk>${project.minJavaVersion}</targetJdk>
                     <rulesets>
                         <ruleset>${project.basedir}/src/test/resources/pmd-ruleset.xml</ruleset>
