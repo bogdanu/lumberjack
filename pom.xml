@@ -148,6 +148,7 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <id>cobertura-check</id>
                         <goals>
                             <goal>clean</goal>
                             <goal>check</goal>
@@ -169,7 +170,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>test</phase>
+                        <id>animal-sniffer-check</id>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -193,14 +194,6 @@
                     </links>
                     <locale>en_US</locale>
                 </configuration>
-                <reportSets>
-                    <reportSet>
-                        <id>default</id>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
             </plugin>
             
             <plugin>
