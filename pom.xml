@@ -61,26 +61,50 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.minJavaVersion>1.5</project.minJavaVersion>
+        <project.cobertura.minBranchCoverage>95</project.cobertura.minBranchCoverage>
+        <project.cobertura.minLineCoverage>95</project.cobertura.minLineCoverage>
+        
+        
+        <!-- Dependency versions -->
+        <version.slf4j.api>1.6.4</version.slf4j.api>
+        <version.junit>4.10</version.junit>
+        <version.mockito.core>1.9.0</version.mockito.core>
+        
+        <!-- Plugin versions -->
+        <version.maven.enforcer.plugin>1.0.1</version.maven.enforcer.plugin>
+        <version.maven.compiler.plugin>2.3.2</version.maven.compiler.plugin>
+        <version.maven.surefire.plugin>2.12</version.maven.surefire.plugin>
+        <version.cobertura.maven.plugin>2.5.1</version.cobertura.maven.plugin>
+        <version.animal.sniffer.maven.plugin>1.7</version.animal.sniffer.maven.plugin>
+        <version.animal.sniffer.signature.java15>1.0</version.animal.sniffer.signature.java15>
+        <version.maven.source.plugin>2.1.2</version.maven.source.plugin>
+        <version.maven.javadoc.plugin>2.8.1</version.maven.javadoc.plugin>
+        <version.maven.jxr.plugin>2.3</version.maven.jxr.plugin>
+        <version.maven.pmd.plugin>2.7.1</version.maven.pmd.plugin>
+        <version.findbugs.maven.plugin>2.4.0</version.findbugs.maven.plugin>
     </properties>
 
     <dependencies>
+        <!-- Compile dependencies -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.4</version>
+            <version>${version.slf4j.api}</version>
         </dependency>
-
+        
+        <!-- Test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>1.9.0</version>
+            <version>${version.mockito.core}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -89,7 +113,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.0.1</version>
+                <version>${version.maven.enforcer.plugin}</version>
                 <executions>
                     <execution>
                         <id>enforce-tools</id>
@@ -99,7 +123,7 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>[1.5.0,)</version>
+                                    <version>[${project.minJavaVersion},)</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
@@ -109,11 +133,10 @@
 
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>${version.maven.compiler.plugin}</version>
                 <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>${project.minJavaVersion}</source>
+                    <target>${project.minJavaVersion}</target>
                     <debug>true</debug>
                     <optimize>false</optimize>
                     <showDeprecation>true</showDeprecation>
@@ -123,7 +146,7 @@
 
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12</version>
+                <version>${version.maven.surefire.plugin}</version>
                 <configuration>
                     <forkMode>once</forkMode>
                     <runOrder>random</runOrder>
@@ -133,15 +156,15 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>${version.cobertura.maven.plugin}</version>
                 <configuration>
                     <check>
-                        <branchRate>95</branchRate>
-                        <packageBranchRate>95</packageBranchRate>
-                        <totalBranchRate>95</totalBranchRate>
+                        <branchRate>${project.cobertura.minBranchCoverage}</branchRate>
+                        <packageBranchRate>${project.cobertura.minBranchCoverage}</packageBranchRate>
+                        <totalBranchRate>${project.cobertura.minBranchCoverage}</totalBranchRate>
 
-                        <packageLineRate>95</packageLineRate>
-                        <totalLineRate>95</totalLineRate>
+                        <packageLineRate>${project.cobertura.minLineCoverage}</packageLineRate>
+                        <totalLineRate>${project.cobertura.minLineCoverage}</totalLineRate>
 
                         <haltOnFailure>true</haltOnFailure>
                     </check>
@@ -160,12 +183,12 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>animal-sniffer-maven-plugin</artifactId>
-                <version>1.7</version>
+                <version>${version.animal.sniffer.maven.plugin}</version>
                 <configuration>
                     <signature>
                         <groupId>org.codehaus.mojo.signature</groupId>
                         <artifactId>java15</artifactId>
-                        <version>1.0</version>
+                        <version>${version.animal.sniffer.signature.java15}</version>
                     </signature>
                 </configuration>
                 <executions>
@@ -181,7 +204,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.1.2</version>
+                <version>${version.maven.source.plugin}</version>
                 <executions>
                     <execution>
                         <id>attach-source</id>
@@ -195,7 +218,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.8.1</version>
+                <version>${version.maven.javadoc.plugin}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -213,7 +236,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.8.1</version>
+                <version>${version.maven.javadoc.plugin}</version>
                 <configuration>
                     <sourcepath>${project.basedir}/src/main/java</sourcepath>
                     <links>
@@ -227,23 +250,23 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.3</version>
+                <version>${version.maven.jxr.plugin}</version>
             </plugin>
         
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>${version.cobertura.maven.plugin}</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>2.7.1</version>
+                <version>${version.maven.pmd.plugin}</version>
                 <configuration>
                     <includeTests>true</includeTests>
                     <linkXref>true</linkXref>
-                    <targetJdk>1.5</targetJdk>
+                    <targetJdk>${project.minJavaVersion}</targetJdk>
                     <rulesets>
                         <ruleset>${project.basedir}/src/test/resources/pmd-ruleset.xml</ruleset>
                     </rulesets>
@@ -253,7 +276,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.4.0</version>
+                <version>${version.findbugs.maven.plugin}</version>
                 <configuration>
                     <effort>Max</effort>
                     <threshold>Low</threshold>
