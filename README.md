@@ -13,3 +13,7 @@ JackLogger logger = JackLoggerFactory.getLogger(LoggerFactory.getLogger(Weather.
 
 logger.info("Hello {}! The current time is {}:{}:{}, and after {} hours the weather will be {}.", "Jack", 13, 30, 0, 5, "sunny");
 ```
+
+## Javadoc
+
+http://bogdanu.github.com/lumberjack/
