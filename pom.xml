@@ -30,7 +30,7 @@
 
     <groupId>gg.pistol</groupId>
     <artifactId>lumberjack</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>Lumberjack</name>
     <url>https://github.com/bogdanu/lumberjack</url>
     <description>
