@@ -17,3 +17,16 @@ logger.info("Hello {}! The current time is {}:{}:{}, and after {} hours the weat
 ## Javadoc
 
 http://bogdanu.github.com/lumberjack/
+
+## Maven usage
+
+To use Lumberjack in your project just add the following dependency in your pom.xml file:
+
+```xml
+<dependency>
+    <groupId>gg.pistol</groupId>
+    <artifactId>lumberjack</artifactId>
+    <version>0.0.2</version>
+</dependency>
+```
+
