@@ -16,7 +16,7 @@ logger.info("Hello {}! The current time is {}:{}:{}, and after {} hours the weat
 
 ## Javadoc
 
-http://bogdanu.github.com/lumberjack/
+http://bogdanu.github.com/lumberjack/javadoc/
 
 ## Maven usage
 
