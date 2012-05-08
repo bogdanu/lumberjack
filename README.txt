@@ -10,3 +10,5 @@ Example usage:
 
 JackLogger logger = JackLoggerFactory.getLogger(LoggerFactory.getLogger(Weather.class));
 logger.info("Hello {}! The current time is {}:{}:{}, and after {} hours the weather will be {}.", "Jack", 13, 30, 0, 5, "sunny");
+
+Web site: https://github.com/bogdanu/lumberjack
