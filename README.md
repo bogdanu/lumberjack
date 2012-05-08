@@ -20,7 +20,7 @@ http://bogdanu.github.com/lumberjack/
 
 ## Maven usage
 
-To use Lumberjack in your project just add the following dependency in your pom.xml file:
+To use Lumberjack in your project just add the following dependency to the <dependencies /> section in your pom.xml file:
 
 ```xml
 <dependency>
