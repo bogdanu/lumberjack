@@ -38,6 +38,8 @@ Lumberjack archive.
 
 Download latest release: https://github.com/downloads/bogdanu/lumberjack/lumberjack-0.0.2.zip
 
+Lumberjack uses and depends on the SLF4J project, so you will also need to include in the classpath the SLF4J JARs.
+
 ## Report bugs
 
 Found a bug? Please file an issue at https://github.com/bogdanu/lumberjack/issues
