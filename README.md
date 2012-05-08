@@ -48,3 +48,11 @@ Found a bug? Please file an issue at https://github.com/bogdanu/lumberjack/issue
 
 If you have questions or comments please send an email to lumberjack-project@googlegroups.com, or you can subscribe
 to the mailing list http://groups.google.com/group/lumberjack-project
+
+## License
+
+Lumberjack is licensed under the MIT license, the same license used by the SLF4J project. This means that there are
+no additional restrictions to use Lumberjack.
+
+The full text of the license terms is available at https://raw.github.com/bogdanu/lumberjack/master/LICENSE.txt
+
