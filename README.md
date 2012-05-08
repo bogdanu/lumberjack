@@ -20,7 +20,8 @@ http://bogdanu.github.com/lumberjack/javadoc/
 
 ## Maven usage
 
-To use Lumberjack in your project just add the following dependency to the &lt;dependencies /&gt; section in your pom.xml file:
+To use Lumberjack in your project just add the following dependency to the &lt;dependencies /&gt; section
+in your pom.xml file.
 
 ```xml
 <dependency>
@@ -30,3 +31,18 @@ To use Lumberjack in your project just add the following dependency to the &lt;d
 </dependency>
 ```
 
+## Download
+
+If you prefer to manually include the JAR dependencies in your project's classpath, then you can download the following
+Lumberjack archive.
+
+Download latest release: https://github.com/downloads/bogdanu/lumberjack/lumberjack-0.0.2.zip
+
+## Report bugs
+
+Found a bug? Please file an issue at https://github.com/bogdanu/lumberjack/issues
+
+## Mailing list
+
+If you have questions or comments please send an email to lumberjack-project@googlegroups.com, or you can subscribe
+to the mailing list http://groups.google.com/group/lumberjack-project
