@@ -6,7 +6,7 @@ which is open source software licensed under the MIT license.
 License: LICENSE.slf4j.txt
 
 This product has test dependency on the JUnit testing framework (http://junit.sourceforge.net/),
-which is open source software licensed under the CPL license.
+which is open source software licensed under the CPL version 1.0 license.
 License: LICENSE.junit.txt
 
 This product has test dependency on the Mockito library (http://code.google.com/p/mockito/),
